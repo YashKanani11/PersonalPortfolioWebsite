@@ -1,103 +1,161 @@
-import Image from "next/image";
-
-export default function Home() {
+// Tailwind CSS v4 upgraded layout using new design tokens
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
+    <main className="bg-surface text-emphasis font-sans">
+      {/* Navbar */}
+      <nav className="flex justify-between items-center p-6 border-b border-accent">
+        <div className="text-2xl font-bold">JM</div>
+        <ul className="flex gap-8 text-sm">
+          <li>
+            <a href="#projects" className="hover:text-accent">
+              Projects
+            </a>
           </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
+          <li>
+            <a href="#experience" className="hover:text-accent">
+              Experience
+            </a>
           </li>
-        </ol>
+          <li>
+            <a href="#contact" className="hover:text-accent">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero Section */}
+      <section className="text-center py-20">
+        <img
+          src="/avatar.png"
+          alt="avatar"
+          className="mx-auto rounded-full w-40 h-40 mb-6"
+        />
+        <h1 className="text-4xl font-bold">
+          I do code and{" "}
+          <span className="text-accent">
+            make content <span className="text-warning">about it!</span>
+          </span>
+        </h1>
+        <p className="max-w-xl mx-auto mt-6 text-subtle">
+          I am a seasoned full-stack software engineer with over 8 years of
+          professional experience, specializing in backend development. My
+          expertise lies in crafting robust and scalable SaaS-based
+          architectures on the Amazon AWS platform.
+        </p>
+        <div className="mt-8 flex justify-center gap-4">
+          <button className="bg-white text-black px-5 py-2 rounded-full">
+            Get In Touch
+          </button>
+          <button className="border border-white px-5 py-2 rounded-full">
+            Download CV
+          </button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* Skills Section */}
+      <section className="text-center py-10">
+        <h2 className="text-subtle uppercase text-sm tracking-widest mb-4">
+          Experience With
+        </h2>
+        <div className="flex justify-center gap-8">
+          {["js", "nextjs", "html5", "css3", "tools"].map((tech, i) => (
+            <img
+              key={i}
+              src={`/icons/${tech}.png`}
+              alt={tech}
+              className="w-10 h-10 grayscale"
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-16">
+        <h2 className="text-center text-warning text-xl font-bold mb-10">
+          PROJECTS
+        </h2>
+        <div className="flex justify-center gap-6 flex-wrap">
+          {["html", "css"].map((proj, i) => (
+            <div key={i} className="bg-surface-muted rounded-xl p-4 max-w-xs">
+              <img
+                src={`/projects/${proj}.png`}
+                alt={proj}
+                className="rounded mb-4"
+              />
+              <p className="text-xs text-subtle">CLICK HERE TO VISIT</p>
+              <h3 className="text-emphasis font-semibold">
+                {proj.toUpperCase()} TUTORIAL
+              </h3>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="py-16 px-4">
+        <h2 className="text-center text-info text-xl font-bold mb-10">
+          EXPERIENCE
+        </h2>
+        <div className="max-w-3xl mx-auto space-y-6">
+          {[
+            {
+              role: "Lead Software Engineer at Google",
+              date: "Nov 2019 – Present",
+              logo: "google",
+              desc: "developing innovative solutions for Google’s core search algorithms...",
+            },
+            {
+              role: "Junior Software Engineer at Apple",
+              date: "Jan 2016 – Dec 2017",
+              logo: "apple",
+              desc: "shaping the architecture of mission-critical software projects...",
+            },
+            {
+              role: "Software Engineer at Meta",
+              date: "Jan 2017 – Oct 2019",
+              logo: "meta",
+              desc: "backend systems for the social media giant’s dynamic platform...",
+            },
+          ].map((job, i) => (
+            <div key={i} className="flex gap-4 items-start">
+              <img
+                src={`/logos/${job.logo}.png`}
+                alt={job.logo}
+                className="w-6 h-6 mt-1"
+              />
+              <div>
+                <h3 className="font-semibold text-emphasis">{job.role}</h3>
+                <p className="text-sm text-subtle">{job.date}</p>
+                <p className="text-sm mt-2 text-subtle">{job.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <footer
+        id="contact"
+        className="bg-surface text-center py-10 border-t border-muted"
+      >
+        <p className="text-subtle max-w-md mx-auto">
+          Seasoned Full Stack Software Engineer with 8+ years of hands-on
+          experience in designing and implementing robust, scalable, and
+          innovative web solutions.
+        </p>
+        <p className="mt-4 text-sm">ashcodedehub@gmail.com</p>
+        <div className="mt-4 flex justify-center gap-4">
+          {["github", "linkedin", "twitter"].map((icon, i) => (
+            <img
+              key={i}
+              src={`/icons/${icon}.png`}
+              alt={icon}
+              className="w-5 h-5"
+            />
+          ))}
+        </div>
       </footer>
-    </div>
+    </main>
   );
 }
