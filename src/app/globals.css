@@ -3,6 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --border: #171717;
+}
+
+.dark {
+  --background: #0e0e0e;
+  --foreground: #ededed;
+  --border: #ffffff;
 }
 
 @theme inline {
@@ -12,15 +19,63 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+@keyframes rainbow-text {
+  0% {
+    color: #f87171;
+  } /* red-400 */
+  25% {
+    color: #facc15;
+  } /* yellow-400 */
+  50% {
+    color: #4ade80;
+  } /* green-400 */
+  75% {
+    color: #60a5fa;
+  } /* blue-400 */
+  100% {
+    color: #f87171;
+  }
+}
+@keyframes rainbow-border {
+  0% {
+    border-color: #f87171;
+  } /* red-400 */
+  25% {
+    border-color: #facc15;
+  } /* yellow-400 */
+  50% {
+    border-color: #4ade80;
+  } /* green-400 */
+  75% {
+    border-color: #60a5fa;
+  } /* blue-400 */
+  100% {
+    border-color: #f87171;
+  }
+}
+.animate-rainbow-text {
+  animation: rainbow-text 3s linear infinite;
+}
+.animate-rainbow-border {
+  animation: rainbow-border 3s linear infinite;
+}
+.delay-0 {
+  animation-delay: 0s;
+}
+.delay-1 {
+  animation-delay: 0.3s;
+}
+.delay-2 {
+  animation-delay: 0.6s;
+}
+.delay-3 {
+  animation-delay: 0.9s;
+}
+.delay-4 {
+  animation-delay: 1.2s;
 }

@@ -7,11 +7,12 @@ const Footer = () => {
       className="bg-surface text-center py-10 border-t border-muted"
     >
       <p className="text-subtle max-w-md mx-auto">
-        Seasoned Full Stack Software Engineer with 8+ years of hands-on
-        experience in designing and implementing robust, scalable, and
-        innovative web solutions.
+        Full-Stack MERN Developer with hands-on experience building scalable web
+        apps and intelligent AI solutions. Strong in React, Node.js, and MongoDB
+        with practical exposure to NLP and GenAI. Looking to contribute to
+        chalanging high-impact development teams.
       </p>
-      <p className="mt-4 text-sm">ashcodedehub@gmail.com</p>
+      <p className="mt-4 text-sm">ykkanani.yk@outlook</p>
       <div className="mt-4 flex justify-center gap-4">
         {["github", "linkedin", "twitter"].map((icon, i) => (
           <img

@@ -14,7 +14,7 @@ export default function HomePage() {
       <Nav />
       <HeroSection />
       <Skills />
-      <SoftSkills />
+      {/* <SoftSkills /> */}
       <Projects />
       <Experience />
       <Education />
